@@ -1,9 +1,9 @@
-# 📌 Punti Focali per la Verifica Valutativa
+# Punti Focali per la Verifica Valutativa
 > Estratto da `attività.md` — Analisi concetti teorici e pratici
 
 ---
 
-## 🗂️ Macro-aree del Progetto
+## Macro-aree del Progetto
 
 Il percorso didattico copre **tre grandi ambiti**:
 
@@ -17,73 +17,73 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 1️⃣ Trasmissione Seriale su Arduino
+## Trasmissione Seriale su Arduino
 
-### 🔵 Teoria
+### Teoria
 - Cos'è la comunicazione **seriale** (UART/RS-232): definizione, caratteristiche
 - Parametri fondamentali: **baud rate**, bit di start/stop, parità
 - Come Arduino gestisce la porta seriale (`Serial.begin()`, `Serial.print()`, `Serial.read()`)
 - Differenza tra comunicazione **sincrona** e **asincrona**
 
-### 🟢 Pratica
+### Pratica
 - Configurare e usare il **Monitor Seriale** dell'IDE Arduino
 - Scrivere sketch Arduino che inviano/ricevono dati su seriale
 - Verificare il corretto funzionamento con strumenti di debug
 
 ---
 
-## 2️⃣ I2C su Arduino
+## I2C su Arduino
 
-### 🔵 Teoria
+### Teoria
 - Cos'è il protocollo **I2C** (Inter-Integrated Circuit)
 - Architettura **Master/Slave**: come funziona l'indirizzamento (7 bit)
 - Segnali **SDA** (dati) e **SCL** (clock)
 - Vantaggi rispetto a SPI e UART: numero di pin, distanza, velocità
 
-### 🟢 Pratica
+### Pratica
 - Uso della libreria `Wire.h` su Arduino
 - Collegamento di dispositivi I2C (sensori, display OLED, ecc.)
 - Lettura e scrittura di dati con `Wire.beginTransmission()` / `Wire.read()`
 
 ---
 
-## 3️⃣ Microcontrollori vs Microprocessori
+## Microcontrollori vs Microprocessori
 
-### 🔵 Teoria — ⚠️ Punto critico per il test
+### Teoria — Punto critico per il test
 - **Definizioni** precise: microprocessore (CPU standalone) vs microcontrollore (sistema completo su chip)
 - Componenti interni di un microcontrollore: CPU, RAM, ROM/Flash, I/O, timer, ADC
 - Confronto su: **costo**, **consumo energetico**, **applicazione tipica**, **programmabilità**
 - Esempi concreti: Arduino (ATmega328P) come microcontrollore; Raspberry Pi come sistema con microprocessore
 
-### 🟢 Pratica
+### Pratica
 - Saper scegliere il dispositivo giusto per un progetto dato
 - Riconoscere i pin e le funzioni di un Arduino
 
 ---
 
-## 4️⃣ Comunicazione Seriale vs Parallela
+## Comunicazione Seriale vs Parallela
 
-### 🔵 Teoria — ⚠️ Punto critico per il test
+### Teoria — Punto critico per il test
 - **Comunicazione seriale**: un bit alla volta su un singolo canale
 - **Comunicazione parallela**: più bit simultanei su più canali
 - Confronto: velocità, costo, distanza, interferenze (crosstalk)
 - Perché la seriale ha prevalso nel lungo raggio (USB, SATA, PCIe seriale)
 - Protocolli seriali comuni: UART, SPI, I2C, USB, RS-485
 
-### 🟢 Pratica
+### Pratica
 - Identificare quale tipo di comunicazione usa un dispositivo
 - Collegare correttamente dispositivi seriali su Arduino
 
 ---
 
-## 5️⃣ Python + Arduino su Seriale
+## Python + Arduino su Seriale
 
-### 🔵 Teoria
+### Teoria
 - Come il PC comunica con Arduino tramite porta COM (USB-seriale)
 - Il concetto di **handshake** e sincronizzazione tra i due dispositivi
 - Struttura di un protocollo di comunicazione semplice (header, payload, fine messaggio)
 
-### 🟢 Pratica — ⚠️ Punto critico per il test
+### Pratica — Punto critico per il test
 - Libreria **`pyserial`**: installazione e uso (`serial.Serial()`, `.read()`, `.write()`)
 - Ciclo lettura/scrittura tra Python e Arduino
 - Gestione degli errori di connessione (porta non disponibile, timeout)
@@ -91,29 +91,29 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 6️⃣ Modello ISO/OSI — Livelli 3 e 7 su Seriale
+## Modello ISO/OSI — Livelli 3 e 7 su Seriale
 
-### 🔵 Teoria — ⚠️ Punto critico per il test
+### Teoria — Punto critico per il test
 - Struttura del modello **ISO/OSI** a 7 livelli (breve panoramica di tutti)
 - **Livello 3 - Rete**: indirizzamento IP, instradamento, pacchettizzazione
 - **Livello 7 - Applicazione**: protocolli di alto livello (HTTP, FTP, MQTT, ecc.)
 - Come questi livelli si applicano a una comunicazione su seriale fisica
 - Concetto di **incapsulamento** dei dati (pacchetto con header + payload)
 
-### 🟢 Pratica
+### Pratica
 - Progettare un semplice **protocollo applicativo** per la comunicazione Arduino–PC
 - Strutturare un pacchetto dati con: identificatore, lunghezza, payload, checksum
 
 ---
 
-## 7️⃣ GUI con Python (tkinter)
+## GUI con Python (tkinter)
 
-### 🔵 Teoria
+### Teoria
 - Cos'è una **GUI** (Graphical User Interface) e perché migliorano l'usabilità
 - Architettura **event-driven**: il programma risponde agli eventi utente
 - Widget principali: Label, Button, Entry, Frame, Canvas
 
-### 🟢 Pratica — ⚠️ Punto critico per il test
+### Pratica — Punto critico per il test
 - Struttura di un'app tkinter: `Tk()`, `mainloop()`
 - Creazione di widget e gestione degli **eventi** (command, bind)
 - Integrazione della lettura seriale in un'app tkinter (uso di `after()` per non bloccare il loop)
@@ -121,15 +121,15 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 8️⃣ Python Web con Flask
+## Python Web con Flask
 
-### 🔵 Teoria
+### Teoria
 - Cos'è un **web framework** e il pattern **MVC/MTV**
 - Architettura **client–server** su HTTP
 - Cos'è un **endpoint** (route) e come funziona una richiesta HTTP (GET, POST)
 - Concetto di **template** (Jinja2)
 
-### 🟢 Pratica — ⚠️ Punto critico per il test
+### Pratica — Punto critico per il test
 - Struttura minima di un'app Flask: `app = Flask(__name__)`, `@app.route()`, `app.run()`
 - Creazione di route e restituzione di risposte HTML/JSON
 - Uso dei template HTML con Jinja2 (`render_template()`)
@@ -138,13 +138,13 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 9️⃣ Comandi Git
+## Comandi Git
 
-### 🔵 Teoria
+### Teoria
 - Cos'è il **versionamento** e perché è fondamentale nello sviluppo
 - Concetti: **repository**, **commit**, **branch**, **merge**, **remote**
 
-### 🟢 Pratica — ⚠️ Punto critico per il test
+### Pratica — Punto critico per il test
 - Comandi essenziali: `git init`, `git clone`, `git add`, `git commit`, `git push`, `git pull`
 - Gestione dei branch: `git branch`, `git checkout`, `git merge`
 - Risoluzione dei conflitti base
@@ -152,7 +152,7 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 🎯 Riepilogo Punti Focali per il Test
+## Riepilogo Punti Focali per il Test
 
 | Priorità | Argomento | Tipo |
 |----------|-----------|------|
@@ -169,7 +169,7 @@ Il percorso didattico copre **tre grandi ambiti**:
 
 ---
 
-## 💡 Suggerimento per la Struttura del Test
+## Suggerimento per la Struttura del Test
 
 ```
 Sezione A — Teoria (30%)
@@ -185,7 +185,7 @@ Sezione C — Progettazione (30%)
 
 ---
 
-## 🔖 TODO — Da completare al prossimo accesso
+## TODO — Da completare al prossimo accesso
 
 - [ ] Generare bozza completa del test con domande per ogni sezione
 - [ ] Aggiungere esempi di codice da analizzare (Sezione B)
